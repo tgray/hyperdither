@@ -4,6 +4,8 @@ Simple Atkinson style dithering using Python.
 
 To speed up the processing, this script requires numpy and numba.  I'm sure there are easy ways to do the same using pure C, but I don't know them.
 
+My main dither function is a little ratty looking.  I was surprised though that it was more efficient than some other PIL/PILLOW implementations I found.  Once I sped it up with [numba][], it became significantly faster.
+
 ## Example
 
 Input image:
@@ -44,7 +46,13 @@ I found values of 0.8 to 1.2 are good for contrast if you want lighten or darken
 
 - [pillow][] 
 - [numpy](http://www.numpy.org)
-- [numba](http://numba.pydata.org)
+- [numba][]
 
+[numba]: http://numba.pydata.org 
 [pillow]: http://python-pillow.org
 [enhance]: https://pillow.readthedocs.io/en/4.0.x/reference/ImageEnhance.html
+
+## Links
+
+- <http://www.tannerhelland.com/4660/dithering-eleven-algorithms-source-code/>
+- <https://en.wikipedia.org/wiki/Bill_Atkinson>
